@@ -1,10 +1,12 @@
 import React from "react";
 import Task from "./Task";
 import { useDragAndDrop } from "@formkit/drag-and-drop/react";
+import { animations } from "@formkit/drag-and-drop";
 
 const List = ({ name, tasks }) => {
   const [parent, tasksList] = useDragAndDrop(tasks, {
     group: "board",
+    plugins: [animations()],
     draggable: (el) => {
       return el.id !== "no-drag";
     },
