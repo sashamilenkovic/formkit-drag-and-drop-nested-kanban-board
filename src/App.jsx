@@ -46,7 +46,7 @@ function App() {
   const style = { display: "flex", gap: "30px", margin: "auto" };
   return (
     <div ref={parent} style={style}>
-      {lists.map((list, index) => {
+      {lists.map((list, _index) => {
         return <List key={list.id} data-label={list.id} {...list} />;
       })}
     </div>
